@@ -1,7 +1,7 @@
 //O principal objetivo deste desafio é fortalecer suas habilidades em lógica de programação. Aqui você deverá desenvolver a lógica para resolver o problema.
 let amigos = []; 
 function adicionarAmigo() {
-    const nomeInput = document.getElementById("amigo").value;
+    const nomeInput = document.getElementById("amigo");
     const nome = nomeInput.value.trim(); // Captura o valor e remove espaços extras
     // Validação para verificar se o campo está vazio
     if (nome === "") {
@@ -29,16 +29,13 @@ function atualizarLista() {
 function sortearAmigo() {
     // Verifica se há amigos no array
     if (amigos.length === 0) {
-        document.getElementById('resultadoSorteio').innerHTML = "Não há amigos para sortear!";
+        document.getElementById('resultado').innerHTML = "Não há amigos para sortear!";
         return;  // Sai da função se o array estiver vazio
     }
-
     // Gera um índice aleatório
     const indiceAleatorio = Math.floor(Math.random() * amigos.length);
-
     // Obtém o amigo sorteado usando o índice aleatório
     const amigoSorteado = amigos[indiceAleatorio];
-
     // Exibe o amigo sorteado
-    document.getElementById('resultadoSorteio').innerHTML = `Amigo sorteado: ${amigoSorteado}`;
+    document.getElementById('resultado').innerHTML = `Amigo sorteado: ${amigoSorteado}`;
 }
